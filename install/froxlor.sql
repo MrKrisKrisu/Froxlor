@@ -658,6 +658,7 @@ opcache.interned_strings_buffer'),
 	('system', 'hsts_preload', '0'),
 	('system', 'leregistered', '0'),
 	('system', 'leaccount', ''),
+	('system', 'letsencrypt_email', ''),
 	('system', 'nssextrausers', '0'),
 	('system', 'le_domain_dnscheck', '1'),
 	('system', 'ssl_protocols', 'TLSv1.2'),
@@ -724,7 +725,7 @@ opcache.interned_strings_buffer'),
 	('panel', 'logo_overridetheme', '0'),
 	('panel', 'logo_overridecustom', '0'),
 	('panel', 'version', '0.10.32'),
-	('panel', 'db_version', '202112310');
+	('panel', 'db_version', '202201260');
 
 
 DROP TABLE IF EXISTS `panel_tasks`;

@@ -962,6 +962,13 @@ if (\Froxlor\Froxlor::isDatabaseVersion('202109040')) {
 }
 
 if (\Froxlor\Froxlor::isFroxlorVersion('0.10.31')) {
-        showUpdateStep("Updating from 0.10.31 to 0.10.32", false);
-        \Froxlor\Froxlor::updateToVersion('0.10.32');
+    showUpdateStep("Updating from 0.10.31 to 0.10.32", false);
+    \Froxlor\Froxlor::updateToVersion('0.10.32');
+}
+
+if (\Froxlor\Froxlor::isDatabaseVersion('202112310')) {
+    showUpdateStep('Add setting for lets encrypt contact email', true);
+    Settings::AddNew('system.letsencrypt_email', '');
+    lastStepStatus(0);
+    \Froxlor\Froxlor::updateToDbVersion('202201260');
 }

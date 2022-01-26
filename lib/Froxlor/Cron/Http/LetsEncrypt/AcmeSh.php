@@ -319,12 +319,16 @@ class AcmeSh extends \Froxlor\Cron\FroxlorCron
 			} else {
 				$acmesh_cmd .= " --keylength " . Settings::Get('system.letsencryptkeysize');
 			}
-			if (Settings::Get('system.letsencryptreuseold') != '1') {
-				$acmesh_cmd .= " --always-force-new-domain-key";
-			}
+            if (Settings::Get('system.letsencryptreuseold') != '1') {
+                $acmesh_cmd .= " --always-force-new-domain-key";
+            }
 			if (Settings::Get('system.letsencryptca') == 'letsencrypt_test') {
 				$acmesh_cmd .= " --staging";
 			}
+            $letsEncryptEmail = Settings::Get('system.letsencrypt_email');
+            if ($letsEncryptEmail !== '' && filter_var($letsEncryptEmail, FILTER_VALIDATE_EMAIL)) {
+                $acmesh_cmd .= ' -m ' . $letsEncryptEmail;
+            }
 			if ($force) {
 				$acmesh_cmd .= " --force";
 			}

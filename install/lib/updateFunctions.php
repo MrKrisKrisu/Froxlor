@@ -31,8 +31,9 @@
 function showUpdateStep($task = null, $needs_status = true)
 {
 	set_time_limit(30);
-	if (! $needs_status)
-		echo "<b>";
+	if (! $needs_status) {
+        echo "<b>";
+    }
 
 	// output
 	echo $task;

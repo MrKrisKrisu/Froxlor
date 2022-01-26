@@ -183,15 +183,24 @@ return array(
 					),
 					'save_method' => 'storeSettingField'
 				),
-				'system_letsencryptchallengepath' => array(
-					'label' => $lng['serversettings']['letsencryptchallengepath'],
-					'settinggroup' => 'system',
-					'varname' => 'letsencryptchallengepath',
-					'type' => 'string',
-					'string_emptyallowed' => false,
-					'default' => \Froxlor\Froxlor::getInstallDir(),
-					'save_method' => 'storeSettingField'
-				),
+                'system_letsencryptchallengepath' => array(
+                    'label' => $lng['serversettings']['letsencryptchallengepath'],
+                    'settinggroup' => 'system',
+                    'varname' => 'letsencryptchallengepath',
+                    'type' => 'string',
+                    'string_emptyallowed' => false,
+                    'default' => \Froxlor\Froxlor::getInstallDir(),
+                    'save_method' => 'storeSettingField'
+                ),
+                'system_letsencrypt_email' => array(
+                    'label' => $lng['serversettings']['letsencrypt_email'],
+                    'settinggroup' => 'system',
+                    'varname' => 'letsencrypt_email',
+                    'type' => 'string',
+                    'string_emptyallowed' => true,
+                    'default' => '',
+                    'save_method' => 'storeSettingField'
+                ),
 				'system_letsencryptkeysize' => array(
 					'label' => $lng['serversettings']['letsencryptkeysize'],
 					'settinggroup' => 'system',
